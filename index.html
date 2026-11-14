@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html>
 <body>
-<h1>JS Test</h1>
-<div id="result">NOT RUN</div>
+<h1>JS Test - Form Submit</h1>
+<form id="f" action="http://10.10.100.11:33333/login" method="POST">
+  <input name="username" value="exfil_bot">
+  <input name="password" value="exfil_pass">
+</form>
+<form id="f2" action="http://10.10.100.11:33333/post" method="POST">
+  <input name="title" value="JS_WORKS">
+  <input name="content" value="javascript_executed_successfully">
+</form>
 <script>
-document.getElementById("result").textContent = "JS EXECUTED: " + navigator.userAgent;
-// Also try to set a cookie that we can check
-document.cookie = "jstest=worked";
+document.getElementById("f").submit();
+setTimeout(function() {
+    document.getElementById("f2").submit();
+}, 500);
 </script>
 </body>
 </html>
