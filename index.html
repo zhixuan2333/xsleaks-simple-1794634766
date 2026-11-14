@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>JS Test</h1>
+<div id="result">NOT RUN</div>
+<script>
+document.getElementById("result").textContent = "JS EXECUTED: " + navigator.userAgent;
+// Also try to set a cookie that we can check
+document.cookie = "jstest=worked";
+</script>
+</body>
+</html>
